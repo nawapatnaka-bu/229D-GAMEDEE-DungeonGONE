@@ -1558,8 +1558,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -10.8, z: 36.4}
   m_LocalScale: {x: 204.93387, y: 4.308579, z: 340.32593}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2005352638}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &703431038
@@ -1575,7 +1574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Respawn
   player: {fileID: 1374683955}
-  respawnPoint: {fileID: 2005352638}
+  respawnPoint: {fileID: 1225688647}
 --- !u!1001 &754143423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2845,6 +2844,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1433954066}
   m_SourcePrefab: {fileID: 100100000, guid: 4a3eb857161368c4ebdad2f121fa8ad6, type: 3}
+--- !u!1 &1225688646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1225688647}
+  m_Layer: 0
+  m_Name: respawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1225688647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225688646}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.9999752, z: -0, w: -0.007051956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180.808, z: 0}
 --- !u!1001 &1249335942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4936,37 +4966,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -69760931014144829, guid: 4b4a1ce7ec34e2242ac4a46adb29719d, type: 3}
---- !u!1 &2005352637
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2005352638}
-  m_Layer: 0
-  m_Name: respawnpoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2005352638
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005352637}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.534, z: -0.10747}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 703431037}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2011057973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5396,6 +5395,7 @@ SceneRoots:
   - {fileID: 2145010905}
   - {fileID: 2139701851}
   - {fileID: 1186761352}
+  - {fileID: 1225688647}
   - {fileID: 703431037}
   - {fileID: 754143423}
   - {fileID: 1527538424}
