@@ -67,5 +67,5 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"Mass:{rb.mass} Accel:{jumpAccel} JumpForce: {jumpForce}");
         return jumpForce; // F
     }
-
+  
 }
