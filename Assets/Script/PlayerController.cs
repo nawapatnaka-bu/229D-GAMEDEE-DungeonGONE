@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     public float rotateSpeed = 1.0f;
     public JumpMeterUI jumpMeterUI;
     public GameObject jumpMeterSlider;
+    public AudioClip jumpSfx;
     private float jumpMeter = Mathf.Clamp(1, 0, 100);
+    private AudioSource playerAudio;
 
     private float jumpForce;
 
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody> ();
+        playerAudio = GetComponent<AudioSource> ();
         jumpMeterSlider.SetActive(false);
     }
 
@@ -63,6 +66,7 @@ public class PlayerController : MonoBehaviour
         rb.AddRelativeForce(new Vector3(0, force, -force));
         jumpMeter = 1;
         onJump = true;
+        playerAudio.PlayOneShot(jumpSfx);
     }
 
     public float CalculateForce()
