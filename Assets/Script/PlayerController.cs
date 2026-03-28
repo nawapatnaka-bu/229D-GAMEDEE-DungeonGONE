@@ -2,15 +2,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerController : MonoBehaviour
 {
     public float jumpPower = 1.0f;
     public float rotateSpeed = 1.0f;
+    public JumpMeterUI jumpMeterUI;
     private float jumpMeter = Mathf.Clamp(1, 0, 100);
 
     private float jumpForce;
 
-    private bool onJump = false;
+    public bool onJump = false;
     private float chargeStartTime;
 
 
@@ -41,23 +43,22 @@ public class PlayerController : MonoBehaviour
         else if (!onJump && Keyboard.current.spaceKey.wasReleasedThisFrame)
         {
             Jump();
-            Debug.Log("2");
         }
+
+        jumpMeterUI.SetValue(jumpMeter);
     }
 
     public void JumpCharge()
     {
         float elapsed = Time.time - chargeStartTime;
         jumpMeter = Mathf.PingPong(elapsed * 50f, 100f);
-        Debug.Log("Charging: " + jumpMeter);
     }
     public void Jump()
     {
         float force = CalculateForce();
         rb.AddRelativeForce(new Vector3(0, force, -force));
         jumpMeter = 1;
-        Debug.Log("4");
-
+        onJump = true;
     }
 
     public float CalculateForce()
@@ -67,5 +68,13 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"Mass:{rb.mass} Accel:{jumpAccel} JumpForce: {jumpForce}");
         return jumpForce; // F
     }
-  
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onJump = false;
+        }
+    }
+
 }
