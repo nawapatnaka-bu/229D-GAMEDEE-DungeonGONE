@@ -65,7 +65,6 @@ public class PlayerController : MonoBehaviour
         float force = CalculateForce();
         rb.AddRelativeForce(new Vector3(0, force, -force));
         jumpMeter = 1;
-        onJump = true;
         playerAudio.PlayOneShot(jumpSfx);
     }
 
@@ -77,11 +76,19 @@ public class PlayerController : MonoBehaviour
         return jumpForce; // F
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             onJump = false;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onJump = true;
         }
     }
 
