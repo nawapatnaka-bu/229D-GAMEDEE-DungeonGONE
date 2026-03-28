@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController : MonoBehaviour
@@ -55,6 +56,11 @@ public class PlayerController : MonoBehaviour
         }
 
         jumpMeterUI.SetValue(jumpMeter);
+
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
     }
 
     public void JumpCharge()
