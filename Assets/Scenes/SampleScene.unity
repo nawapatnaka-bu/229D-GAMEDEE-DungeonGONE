@@ -2465,11 +2465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7445081739186605028, guid: 59fe7a290ee42f04c90566833f8da500, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.72
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 7445081739186605028, guid: 59fe7a290ee42f04c90566833f8da500, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.62
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7445081739186605028, guid: 59fe7a290ee42f04c90566833f8da500, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3584,7 +3584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 982e299ed3cb55941998f42757e63e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  moveSpeed: 1
+  moveSpeed: 2
   leftPos: {fileID: 629784264}
   rightPos: {fileID: 1232583548}
 --- !u!54 &1252829726
@@ -6344,7 +6344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 982e299ed3cb55941998f42757e63e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  moveSpeed: 1
+  moveSpeed: 2
   leftPos: {fileID: 557255260}
   rightPos: {fileID: 1871980573}
 --- !u!54 &2022139881
