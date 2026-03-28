@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float jumpPower = 1.0f;
     public float rotateSpeed = 1.0f;
     public JumpMeterUI jumpMeterUI;
+    public GameObject jumpMeterSlider;
     private float jumpMeter = Mathf.Clamp(1, 0, 100);
 
     private float jumpForce;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody> ();
+        jumpMeterSlider.SetActive(false);
     }
 
     private void Update()
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
         if (!onJump && Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             chargeStartTime = Time.time;
+            jumpMeterSlider.SetActive(true);
         }
         if (!onJump && Keyboard.current.spaceKey.isPressed)
         {
@@ -43,6 +46,7 @@ public class PlayerController : MonoBehaviour
         else if (!onJump && Keyboard.current.spaceKey.wasReleasedThisFrame)
         {
             Jump();
+            jumpMeterSlider.SetActive(false);
         }
 
         jumpMeterUI.SetValue(jumpMeter);

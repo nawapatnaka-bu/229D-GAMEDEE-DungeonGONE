@@ -18,4 +18,5 @@ public class JumpMeterUI : MonoBehaviour
             Debug.Log("UI SetValue: " + value + " / Slider.maxValue: " + slider.maxValue);
         }
     }
+
 }
